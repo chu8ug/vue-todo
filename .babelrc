@@ -1,0 +1,35 @@
+{
+  "plugins": [
+    "@vue/babel-plugin-transform-vue-jsx",
+    "@babel/plugin-syntax-dynamic-import"
+  ],
+  "env": {
+    "browser": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "safari >= 7"
+              ]
+            }
+          }
+        ]
+      ]
+    },
+    "node": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "mode": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
