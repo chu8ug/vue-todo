@@ -10,8 +10,8 @@ module.exports = async (ctx, renderer, template) => {
 
     console.log(`${ctx.path}`)
 
-    if (context.router.currrntRoute.fullPath !== ctx.path) {
-      return ctx.redirect(context.router.currrntRoute.fullPath)
+    if (context.router.currentRoute.fullPath !== ctx.path) {
+      return ctx.redirect(context.router.currentRoute.fullPath)
     }
 
     const {

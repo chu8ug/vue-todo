@@ -31,6 +31,7 @@ serverCompiler.watch({}, (err, stats) => {
 const handleSSR = async (ctx) => {
   if (!bundle) {
     ctx.body = '等一会'
+    return
   }
 
   const clientManifestResp = await axios.get(
@@ -43,10 +44,11 @@ const handleSSR = async (ctx) => {
     'utf-8'
   )
 
-  const renderer = VueServerRenderer.createBundleRenderer(bundle, {
-    inject: false,
-    clientManifest
-  })
+  const renderer = VueServerRenderer
+    .createBundleRenderer(bundle, {
+      inject: false,
+      clientManifest
+    })
 
   await serverRender(ctx, renderer, template)
 }
